@@ -75,7 +75,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
 
       if(yaw_rate == 0) {
          new_x = p.x + velocity * delta_t * cos(p.theta);
-         new_y = p.x + velocity * delta_t * sin(p.theta);
+         new_y = p.y + velocity * delta_t * sin(p.theta);
          new_theta = p.theta;
       } else {
          new_x = p.x + velocity / yaw_rate * (sin(p.theta + yaw_rate * delta_t) - sin(p.theta));
